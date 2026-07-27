@@ -1,0 +1,363 @@
+[
+  {
+    "name": "Roshani Shinde",
+    "role": "Marketing Manager",
+    "department": "Manager",
+    "shift": "Day",
+    "slug": "roshani-shinde",
+    "photo": "images/team/roshani-shinde.jpg",
+    "initials": "RS"
+  },
+  {
+    "name": "Mayuresh Sorap",
+    "role": "Team Lead \u2013 Digital Marketing",
+    "department": "SEO",
+    "shift": "Day",
+    "slug": "mayuresh-sorap",
+    "photo": "images/team/mayuresh-sorap.jpg",
+    "initials": "MS"
+  },
+  {
+    "name": "Aakash Pandit",
+    "role": "Admin Supervisor",
+    "department": "Admin & Operations",
+    "shift": "Night",
+    "slug": "aakash-pandit",
+    "photo": "images/team/aakash-pandit.jpg",
+    "initials": "AP"
+  },
+  {
+    "name": "Manish Mestry",
+    "role": "Administrative Assistant",
+    "department": "Admin & Operations",
+    "shift": "Day",
+    "slug": "manish-mestry",
+    "photo": "images/team/manish-mestry.jpg",
+    "initials": "MM"
+  },
+  {
+    "name": "Mohammad Atique Khan",
+    "role": "Admin and Operations Executive",
+    "department": "Admin & Operations",
+    "shift": "Day",
+    "slug": "mohammad-atique-khan",
+    "photo": "images/team/mohammad-atique-khan.jpg",
+    "initials": "MA"
+  },
+  {
+    "name": "Aman Patil",
+    "role": "Admin Assistant",
+    "department": "Admin & Operations",
+    "shift": "Night",
+    "slug": "aman-patil",
+    "photo": "images/team/aman-patil.jpg",
+    "initials": "AP"
+  },
+  {
+    "name": "Tajinderpal Singh",
+    "role": "Admin Assistant",
+    "department": "Admin & Operations",
+    "shift": "Day",
+    "slug": "tajinderpal-singh",
+    "photo": "images/team/tajinderpal-singh.jpg",
+    "initials": "TS"
+  },
+  {
+    "name": "Sarvesh Bhosale",
+    "role": "Email Marketing & Automation Specialist",
+    "department": "Email Marketing & SFMC",
+    "shift": "Night",
+    "slug": "sarvesh-bhosale",
+    "photo": "images/team/sarvesh-bhosale.jpg",
+    "initials": "SB"
+  },
+  {
+    "name": "Nishant Bharmal",
+    "role": "Web Developer",
+    "department": "Web Development",
+    "shift": "Day",
+    "slug": "nishant-bharmal",
+    "photo": "images/team/nishant-bharmal.jpg",
+    "initials": "NB"
+  },
+  {
+    "name": "Jyoti More",
+    "role": "Office Help",
+    "department": "Office Help",
+    "shift": "Day",
+    "slug": "jyoti-more",
+    "photo": "images/team/jyoti-more.jpg",
+    "initials": "JM"
+  },
+  {
+    "name": "Taufiquddin Shaikh",
+    "role": "Admin Assistant",
+    "department": "Admin & Operations",
+    "shift": "Night",
+    "slug": "taufiquddin-shaikh",
+    "photo": "images/team/taufiquddin-shaikh.jpg",
+    "initials": "TS"
+  },
+  {
+    "name": "Saif Shaikh",
+    "role": "Admin cum Coordinator",
+    "department": "Clerical Admin",
+    "shift": "Day",
+    "slug": "saif-shaikh",
+    "photo": "images/team/saif-shaikh.jpg",
+    "initials": "SS"
+  },
+  {
+    "name": "Akshita Thappa",
+    "role": "Senior HR cum Admin Executive",
+    "department": "HR",
+    "shift": "Day",
+    "slug": "akshita-thappa",
+    "photo": "images/team/akshita-thappa.jpg",
+    "initials": "AT"
+  },
+  {
+    "name": "Namrata Pandurang",
+    "role": "UI/UX Designer",
+    "department": "UI/UX Design",
+    "shift": "Day",
+    "slug": "namrata-pandurang",
+    "photo": "images/team/namrata-pandurang.jpg",
+    "initials": "NP"
+  },
+  {
+    "name": "Priyanka Kochrekar",
+    "role": "UI/UX Designer",
+    "department": "UI/UX Design",
+    "shift": "Day",
+    "slug": "priyanka-kochrekar",
+    "photo": "images/team/priyanka-kochrekar.jpg",
+    "initials": "PK"
+  },
+  {
+    "name": "Deepa Yadav",
+    "role": "Junior Full Stack Developer",
+    "department": "Web Development",
+    "shift": "Day",
+    "slug": "deepa-yadav",
+    "photo": "images/team/deepa-yadav.jpg",
+    "initials": "DY"
+  },
+  {
+    "name": "Parmeshwar Sherve",
+    "role": "Email Marketing Executive",
+    "department": "Email Marketing & SFMC",
+    "shift": "Day",
+    "slug": "parmeshwar-sherve",
+    "photo": "images/team/parmeshwar-sherve.jpg",
+    "initials": "PS"
+  },
+  {
+    "name": "Shreyash Sanjay Patil",
+    "role": "Graphic Designer",
+    "department": "Graphic Design",
+    "shift": "Day",
+    "slug": "shreyash-sanjay-patil",
+    "photo": "images/team/shreyash-sanjay-patil.jpg",
+    "initials": "SS"
+  },
+  {
+    "name": "Satyavijay Sapkal",
+    "role": "Senior Graphic Designer",
+    "department": "Graphic Design",
+    "shift": "Day",
+    "slug": "satyavijay-sapkal",
+    "photo": "images/team/satyavijay-sapkal.jpg",
+    "initials": "SS"
+  },
+  {
+    "name": "Shubham Vilas Girkar",
+    "role": "Web Developer",
+    "department": "Web Development",
+    "shift": "Day",
+    "slug": "shubham-vilas-girkar",
+    "photo": "images/team/shubham-vilas-girkar.jpg",
+    "initials": "SV"
+  },
+  {
+    "name": "Abdul Shaikh",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "abdul-shaikh",
+    "photo": "images/team/abdul-shaikh.jpg",
+    "initials": "AS"
+  },
+  {
+    "name": "Moinul Khan",
+    "role": "Senior Content Writer",
+    "department": "SEO",
+    "shift": "Day",
+    "slug": "moinul-khan",
+    "photo": "images/team/moinul-khan.jpg",
+    "initials": "MK"
+  },
+  {
+    "name": "Devendra Rajendra Patil",
+    "role": "Web Developer",
+    "department": "Web Development",
+    "shift": "Night",
+    "slug": "devendra-rajendra-patil",
+    "photo": "images/team/devendra-rajendra-patil.jpg",
+    "initials": "DR"
+  },
+  {
+    "name": "Suraj Kadam",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Day",
+    "slug": "suraj-kadam",
+    "photo": "images/team/suraj-kadam.jpg",
+    "initials": "SK"
+  },
+  {
+    "name": "Prashant Muni",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "prashant-muni",
+    "photo": "images/team/prashant-muni.jpg",
+    "initials": "PM"
+  },
+  {
+    "name": "Royce D Souza",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "royce-d-souza",
+    "photo": "images/team/royce-d-souza.jpg",
+    "initials": "RD"
+  },
+  {
+    "name": "Shamam Rizvi",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "shamam-rizvi",
+    "photo": "images/team/shamam-rizvi.jpg",
+    "initials": "SR"
+  },
+  {
+    "name": "Wilson Fernandes",
+    "role": "Senior SEO Executive",
+    "department": "SEO",
+    "shift": "Day",
+    "slug": "wilson-fernandes",
+    "photo": "images/team/wilson-fernandes.jpg",
+    "initials": "WF"
+  },
+  {
+    "name": "Shiv Pandey",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "shiv-pandey",
+    "photo": "images/team/shiv-pandey.jpg",
+    "initials": "SP"
+  },
+  {
+    "name": "Darshan Sawant",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "darshan-sawant",
+    "photo": "images/team/darshan-sawant.jpg",
+    "initials": "DS"
+  },
+  {
+    "name": "Karan Singh",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "karan-singh",
+    "photo": "images/team/karan-singh.jpg",
+    "initials": "KS"
+  },
+  {
+    "name": "Rina Nadar",
+    "role": "Salesforce Marketing Cloud Executive",
+    "department": "Email Marketing & SFMC",
+    "shift": "Day",
+    "slug": "rina-nadar",
+    "photo": "images/team/rina-nadar.jpg",
+    "initials": "RN"
+  },
+  {
+    "name": "Nikita More",
+    "role": "Admin Assistant",
+    "department": "Clerical Admin",
+    "shift": "Day",
+    "slug": "nikita-more",
+    "photo": "images/team/nikita-more.jpg",
+    "initials": "NM"
+  },
+  {
+    "name": "Sayed Junaid Ahmed",
+    "role": "HR Executive",
+    "department": "HR",
+    "shift": "Day",
+    "slug": "sayed-junaid-ahmed",
+    "photo": "images/team/sayed-junaid-ahmed.jpg",
+    "initials": "SJ"
+  },
+  {
+    "name": "Najeeb Mankar",
+    "role": "SEO Manager",
+    "department": "SEO",
+    "shift": "Day",
+    "slug": "najeeb-mankar",
+    "photo": "images/team/najeeb-mankar.jpg",
+    "initials": "NM"
+  },
+  {
+    "name": "Omkar Kailash Garge",
+    "role": "Salesforce Administrator",
+    "department": "Salesforce",
+    "shift": "Night",
+    "slug": "omkar-kailash-garge",
+    "photo": "images/team/omkar-kailash-garge.jpg",
+    "initials": "OK"
+  },
+  {
+    "name": "Anup Santosh Kankale",
+    "role": "Web Developer",
+    "department": "Web Development",
+    "shift": "Day",
+    "slug": "anup-santosh-kankale",
+    "photo": "images/team/anup-santosh-kankale.jpg",
+    "initials": "AS"
+  },
+  {
+    "name": "Keith Buthello",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Day",
+    "slug": "keith-buthello",
+    "photo": "images/team/keith-buthello.jpg",
+    "initials": "KB"
+  },
+   {
+    "name": "Arbaaz Shaikh",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Night",
+    "slug": "arbaaz-shaikh",
+    "photo": "images/team/arbaaz-shaikh.jpg",
+    "initials": "AS"
+  },
+  {
+    "name": "Sanju Thappa",
+    "role": "Customer Service Representative",
+    "department": "Customer Service",
+    "shift": "Day",
+    "slug": "sanju-thappa",
+    "photo": "images/team/sanju-thappa.jpg",
+    "initials": "ST"
+  }
+ 
+]
