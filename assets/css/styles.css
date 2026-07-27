@@ -392,7 +392,229 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   .hero-stats { flex-direction: column; gap: 20px; }
 }
 
+/* --- Buttons ------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+.btn:active { transform: scale(0.97); }
+.btn--primary { background: var(--accent); color: #fff; }
+.btn--primary:hover { background: var(--accent-dark); }
+.btn--secondary { background: #fff; color: var(--text); border-color: var(--border); }
+.btn--secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn--danger { background: #fff; color: #DC2626; border-color: #FCA5A5; }
+.btn--danger:hover { background: #FEF2F2; border-color: #DC2626; }
+.btn--ghost { background: transparent; color: var(--text-muted); }
+.btn--ghost:hover { color: var(--text); }
+
+/* --- Section header row (with action button) --------------- */
+.section-header--row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- Employee card (clickable) ------------------------------ */
+.employee-card {
+  cursor: pointer;
+  outline-offset: 3px;
+}
+.employee-card:focus-visible { outline: 2px solid var(--accent); }
+
+/* --- Modal --------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.18s ease both;
+}
+.modal-overlay[hidden] { display: none; }
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hover);
+  padding: 36px 32px 28px;
+  animation: modalPop 0.22s ease both;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+.modal-close:hover { background: var(--accent-light); color: var(--accent); }
+
+.modal-view-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+  padding-right: 32px;
+}
+.modal-avatar-wrap { width: 72px; height: 72px; flex-shrink: 0; }
+.modal-avatar-wrap img,
+.modal-avatar-wrap .employee-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+.modal-view-heading h3 { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+.modal-role { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+.modal-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.modal-dept-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.modal-details { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.modal-details:empty { display: none; }
+.modal-details .detail-row { display: flex; flex-direction: column; gap: 2px; }
+.modal-details dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.modal-details dd { font-size: 14px; color: var(--text); line-height: 1.5; }
+
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+
+/* --- Form ------------------------------------------------- */
+#modal-form h3 { font-size: 20px; font-weight: 800; margin-bottom: 20px; padding-right: 32px; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.form-field--full { grid-column: 1 / -1; }
+.req { color: var(--accent); margin-left: 2px; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color var(--transition);
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-field textarea { resize: vertical; }
+.form-error {
+  font-size: 13px;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.form-error[hidden] { display: none; }
+
+/* --- Toast -------------------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  max-width: min(90vw, 420px);
+  background: var(--text);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-hover);
+  animation: toastIn 0.22s ease both;
+}
+.toast[hidden] { display: none; }
+.toast--error { background: #DC2626; }
+.toast--success { background: #059669; }
+
+/* --- Responsive modal/form --------------------------------- */
+@media (max-width: 560px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .modal { padding: 28px 20px 22px; }
+}
+
 /* --- Animations ------------------------------------------ */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalPop {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
