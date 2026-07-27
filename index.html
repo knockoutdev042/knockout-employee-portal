@@ -55,9 +55,12 @@
   <!-- TEAM -->
   <section class="section section--alt" id="team">
     <div class="container">
-      <div class="section-header">
-        <h2>Meet the Team</h2>
-        <p>Every person behind the work.</p>
+      <div class="section-header section-header--row">
+        <div>
+          <h2>Meet the Team</h2>
+          <p>Every person behind the work. Click a card to see details.</p>
+        </div>
+        <button type="button" class="btn btn--primary" id="add-employee-btn">+ Add Employee</button>
       </div>
       <div id="team-sections">
         <!-- injected by JS -->
@@ -75,6 +78,92 @@
       <p class="footer-copy">&copy; <span id="year"></span> Knockout Agency LLP. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- EMPLOYEE MODAL (view + create/edit form) -->
+  <div class="modal-overlay" id="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+      <!-- VIEW MODE -->
+      <div id="modal-view">
+        <div class="modal-view-header">
+          <div class="modal-avatar-wrap" id="modal-avatar-wrap"><!-- injected --></div>
+          <div class="modal-view-heading">
+            <h3 id="modal-title"></h3>
+            <p class="modal-role" id="modal-role"></p>
+            <div class="modal-badges">
+              <span class="modal-dept-badge" id="modal-dept-badge"></span>
+              <span class="shift-badge" id="modal-shift-badge"></span>
+            </div>
+          </div>
+        </div>
+        <dl class="modal-details" id="modal-details"><!-- injected --></dl>
+        <div class="modal-actions">
+          <button type="button" class="btn btn--secondary" id="modal-edit-btn">Edit</button>
+          <button type="button" class="btn btn--danger" id="modal-delete-btn">Delete</button>
+        </div>
+      </div>
+
+      <!-- FORM MODE (create / edit) -->
+      <form id="modal-form" hidden novalidate>
+        <h3 id="form-title">Add Employee</h3>
+        <div class="form-grid">
+          <label class="form-field">
+            Full Name<span class="req">*</span>
+            <input type="text" name="name" required />
+          </label>
+          <label class="form-field">
+            Role / Title
+            <input type="text" name="role" />
+          </label>
+          <label class="form-field">
+            Department<span class="req">*</span>
+            <input type="text" name="department" required list="dept-list" />
+            <datalist id="dept-list"></datalist>
+          </label>
+          <label class="form-field">
+            Shift
+            <select name="shift">
+              <option value="Day">Day</option>
+              <option value="Night">Night</option>
+            </select>
+          </label>
+          <label class="form-field">
+            Email
+            <input type="email" name="email" />
+          </label>
+          <label class="form-field">
+            Phone
+            <input type="text" name="phone" />
+          </label>
+          <label class="form-field">
+            Location
+            <input type="text" name="location" />
+          </label>
+          <label class="form-field">
+            Join Date
+            <input type="date" name="joinDate" />
+          </label>
+          <label class="form-field">
+            Reports To
+            <input type="text" name="reportsTo" placeholder="Manager's name" />
+          </label>
+          <label class="form-field form-field--full">
+            Bio
+            <textarea name="bio" rows="3" placeholder="A short note about this person..."></textarea>
+          </label>
+        </div>
+        <p class="form-error" id="form-error" hidden></p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn--ghost" id="form-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn--primary" id="form-submit-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" hidden></div>
 
   <script src="assets/js/app.js"></script>
 </body>
