@@ -10,7 +10,7 @@
   },
   {
     "name": "Mayuresh Sorap",
-    "role": "Team Lead \u2013 Digital Marketing",
+    "role": "Team Lead – Digital Marketing",
     "department": "SEO",
     "shift": "Day",
     "slug": "mayuresh-sorap",
@@ -341,7 +341,7 @@
     "photo": "images/team/keith-buthello.jpg",
     "initials": "KB"
   },
-   {
+  {
     "name": "Arbaaz Shaikh",
     "role": "Customer Service Representative",
     "department": "Customer Service",
@@ -358,6 +358,20 @@
     "slug": "sanju-thappa",
     "photo": "images/team/sanju-thappa.jpg",
     "initials": "ST"
+  },
+  {
+    "name": "Test LGhome",
+    "role": "",
+    "department": "Clerical Admin",
+    "shift": "Day",
+    "slug": "test-lghome",
+    "photo": "images/team/test-lghome.jpg",
+    "initials": "TL",
+    "email": "test.lghomecomfort@gmail.com",
+    "phone": "18664385442",
+    "location": "",
+    "joinDate": "2026-06-18",
+    "bio": "",
+    "reportsTo": ""
   }
- 
 ]
