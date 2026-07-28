@@ -358,20 +358,5 @@
     "slug": "sanju-thappa",
     "photo": "images/team/sanju-thappa.jpg",
     "initials": "ST"
-  },
-  {
-    "name": "Test",
-    "role": "",
-    "department": "Clerical Admin",
-    "shift": "Day",
-    "slug": "test-lghome",
-    "photo": "images/team/test-lghome.jpg",
-    "initials": "TL",
-    "email": "test.lghomecomfort@gmail.com",
-    "phone": "18664385442",
-    "location": "",
-    "joinDate": "2026-06-18",
-    "bio": "",
-    "reportsTo": ""
   }
 ]
