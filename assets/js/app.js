@@ -139,22 +139,12 @@
     const grid = document.getElementById('dept-grid');
     if (!grid) return;
 
-    // Feature the 1-2 largest departments as bigger gradient tiles,
-    // without disturbing the existing org-chart display order.
-    const FEATURED_COUNT = 2;
-    const featuredNames = new Set(
-      [...depts]
-        .sort(([, a], [, b]) => b.length - a.length)
-        .slice(0, FEATURED_COUNT)
-        .map(([name]) => name)
-    );
-
-    grid.innerHTML = depts.map(([name, members]) => {
+    grid.innerHTML = depts.map(([name, members], index) => {
       const cfg = getDeptConfig(name);
       const id = deptId(name);
-      const featured = featuredNames.has(name);
+      const variant = index % 2 === 0 ? 'dept-card--navy' : 'dept-card--orange';
       return `
-        <a class="dept-card${featured ? ' dept-card--featured' : ''}" href="#${id}" aria-label="${escapeHtml(name)} department, ${members.length} members">
+        <a class="dept-card ${variant}" href="#${id}" aria-label="${escapeHtml(name)} department, ${members.length} members">
           <div class="dept-icon">${cfg.icon}</div>
           <div>
             <div class="dept-name">${escapeHtml(name)}</div>

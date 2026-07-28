@@ -14,6 +14,12 @@
   --danger-rgb:    220,38,38;
   --danger-dark:   #B91C1C;
 
+  /* secondary bento accents */
+  --navy-1:        #4C5D82;
+  --navy-2:        #232B3E;
+  --orange-1:      #FB923C;
+  --orange-2:      #EA580C;
+
   --bg:            #ffffff;
   --bg-alt:        #F7F7F8;
   --text:          #111827;
@@ -164,9 +170,8 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
 .hero-bg-shape { display: none; }
 .hero-card {
   position: relative;
-  backdrop-filter: blur(24px);
-  background: var(--glass-soft);
-  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, var(--navy-1) 0%, var(--navy-2) 100%);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-float);
   padding: 44px 40px;
@@ -179,9 +184,9 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   gap: 8px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-muted);
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  color: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--radius-pill);
   padding: 8px 16px;
   margin-bottom: 22px;
@@ -189,7 +194,7 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
 }
 .hero-eyebrow::before {
   content: '\2726';
-  color: var(--accent);
+  color: var(--orange-1);
   font-size: 13px;
 }
 .hero-title {
@@ -197,13 +202,14 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -.02em;
-  color: var(--text);
+  color: #fff;
   margin-bottom: 18px;
   max-width: 720px;
 }
+.hero-title .accent { color: var(--orange-1); }
 .hero-sub {
   font-size: clamp(15px, 1.6vw, 18px);
-  color: var(--text-muted);
+  color: rgba(255,255,255,.68);
   max-width: 560px;
   line-height: 1.7;
   margin-bottom: 36px;
@@ -217,23 +223,28 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: var(--radius-lg);
   padding: 18px 20px;
   backdrop-filter: blur(16px);
-  box-shadow: 0 18px 50px -28px rgba(17,24,39,.35);
+  box-shadow: 0 18px 50px -28px rgba(0,0,0,.5);
+  transition: border-color var(--transition), background var(--transition);
+}
+.stat-item:hover {
+  border-color: rgba(251,146,60,.5);
+  background: rgba(255,255,255,.09);
 }
 .stat-number {
   font-size: 32px;
   font-weight: 700;
-  color: var(--text);
+  color: #fff;
   line-height: 1;
   letter-spacing: -.02em;
 }
 .stat-label {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.6);
   font-weight: 500;
 }
 
@@ -328,21 +339,31 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   letter-spacing: .04em;
 }
 
-/* Featured (largest) departments — gradient bento tiles, span 2 cols */
-.dept-card--featured {
-  grid-column: span 2;
+/* Alternating navy / orange bento tiles — applied to every department card */
+.dept-card--navy,
+.dept-card--orange {
   color: #fff;
-  background: linear-gradient(135deg, rgba(var(--accent-rgb),.96), rgba(217,119,6,.88));
   border: none;
-  box-shadow: 0 24px 60px -26px rgba(var(--accent-rgb), .55);
 }
-.dept-card--featured .dept-icon {
+.dept-card--navy {
+  background: linear-gradient(135deg, var(--navy-1) 0%, var(--navy-2) 100%);
+  box-shadow: 0 24px 60px -28px rgba(35,43,62,.6);
+}
+.dept-card--orange {
+  background: linear-gradient(135deg, var(--orange-1) 0%, var(--orange-2) 100%);
+  box-shadow: 0 24px 60px -26px rgba(234,88,12,.5);
+}
+.dept-card--navy .dept-icon,
+.dept-card--orange .dept-icon {
   background: rgba(255,255,255,.18);
   color: #fff;
 }
-.dept-card--featured .dept-name { color: #fff; }
-.dept-card--featured .dept-count { color: #fff; }
-.dept-card--featured .dept-count-label { color: rgba(255,255,255,.75); }
+.dept-card--navy .dept-name,
+.dept-card--orange .dept-name { color: #fff; }
+.dept-card--navy .dept-count,
+.dept-card--orange .dept-count { color: #fff; }
+.dept-card--navy .dept-count-label,
+.dept-card--orange .dept-count-label { color: rgba(255,255,255,.75); }
 
 /* --- Team Sections --------------------------------------- */
 .team-department { margin-bottom: 48px; }
@@ -810,7 +831,6 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   .hero-card { padding: 32px 24px; }
   nav { display: none; }
   .dept-grid { grid-template-columns: repeat(2, 1fr); }
-  .dept-card--featured { grid-column: span 2; }
   .employee-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
 }
 @media (max-width: 560px) {
