@@ -339,30 +339,19 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
   letter-spacing: .04em;
 }
 
-/* Alternating navy / orange bento tiles — applied to every department card */
-.dept-card--navy,
+/* Orange bento tiles — applied to every department card */
 .dept-card--orange {
   color: #fff;
   border: none;
-}
-.dept-card--navy {
-  background: linear-gradient(135deg, var(--navy-1) 0%, var(--navy-2) 100%);
-  box-shadow: 0 24px 60px -28px rgba(35,43,62,.6);
-}
-.dept-card--orange {
   background: linear-gradient(135deg, var(--orange-1) 0%, var(--orange-2) 100%);
   box-shadow: 0 24px 60px -26px rgba(234,88,12,.5);
 }
-.dept-card--navy .dept-icon,
 .dept-card--orange .dept-icon {
   background: rgba(255,255,255,.18);
   color: #fff;
 }
-.dept-card--navy .dept-name,
 .dept-card--orange .dept-name { color: #fff; }
-.dept-card--navy .dept-count,
 .dept-card--orange .dept-count { color: #fff; }
-.dept-card--navy .dept-count-label,
 .dept-card--orange .dept-count-label { color: rgba(255,255,255,.75); }
 
 /* --- Team Sections --------------------------------------- */
