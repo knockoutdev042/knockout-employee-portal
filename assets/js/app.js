@@ -134,16 +134,27 @@
     `).join('');
   }
 
-  // --- Build Department Cards -------------------------------
+  // --- Build Department Cards (bento grid) -------------------
   function buildDeptGrid(depts) {
     const grid = document.getElementById('dept-grid');
     if (!grid) return;
 
+    // Feature the 1-2 largest departments as bigger gradient tiles,
+    // without disturbing the existing org-chart display order.
+    const FEATURED_COUNT = 2;
+    const featuredNames = new Set(
+      [...depts]
+        .sort(([, a], [, b]) => b.length - a.length)
+        .slice(0, FEATURED_COUNT)
+        .map(([name]) => name)
+    );
+
     grid.innerHTML = depts.map(([name, members]) => {
       const cfg = getDeptConfig(name);
       const id = deptId(name);
+      const featured = featuredNames.has(name);
       return `
-        <a class="dept-card" href="#${id}" aria-label="${escapeHtml(name)} department, ${members.length} members">
+        <a class="dept-card${featured ? ' dept-card--featured' : ''}" href="#${id}" aria-label="${escapeHtml(name)} department, ${members.length} members">
           <div class="dept-icon">${cfg.icon}</div>
           <div>
             <div class="dept-name">${escapeHtml(name)}</div>
@@ -157,7 +168,7 @@
     }).join('');
   }
 
-  // --- Build Employee Card ----------------------------------
+  // --- Build Employee Card (photo-banner style) --------------
   function buildEmployeeCard(emp) {
     const gradient = getGradientForSlug(emp.slug);
     const shiftClass = emp.shift === 'Night' ? 'shift-badge--night' : 'shift-badge--day';
@@ -177,10 +188,14 @@
       <div class="employee-card" data-slug="${escapeHtml(emp.slug)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for ${escapeHtml(emp.name)}">
         <div class="employee-photo-wrap">
           ${photoHtml}
+          <div class="employee-photo-scrim"></div>
+          <span class="employee-dept-tag">${escapeHtml(emp.department)}</span>
+          <div class="employee-overlay-text">
+            <div class="employee-name">${escapeHtml(emp.name)}</div>
+            ${emp.role ? `<div class="employee-role">${escapeHtml(emp.role)}</div>` : ''}
+          </div>
         </div>
         <div class="employee-info">
-          <div class="employee-name">${escapeHtml(emp.name)}</div>
-          ${emp.role ? `<div class="employee-role">${escapeHtml(emp.role)}</div>` : ''}
           <span class="shift-badge ${shiftClass}">${shiftIcon} ${escapeHtml(emp.shift)} Shift</span>
         </div>
       </div>
@@ -241,6 +256,7 @@
   const overlay = () => document.getElementById('modal-overlay');
   const viewEl = () => document.getElementById('modal-view');
   const formEl = () => document.getElementById('modal-form');
+  const confirmDeleteEl = () => document.getElementById('modal-confirm-delete');
 
   function openModal() {
     const ov = overlay();
@@ -286,7 +302,7 @@
     const rows = DETAIL_FIELDS
       .filter(f => emp[f.key])
       .map(f => `
-        <div class="detail-row">
+        <div class="detail-row${f.key === 'bio' ? ' detail-row--full' : ''}">
           <dt>${f.label}</dt>
           <dd>${escapeHtml(emp[f.key])}</dd>
         </div>
@@ -295,6 +311,7 @@
 
     viewEl().hidden = false;
     formEl().hidden = true;
+    confirmDeleteEl().hidden = true;
     openModal();
   }
 
@@ -325,6 +342,7 @@
 
     viewEl().hidden = true;
     form.hidden = false;
+    confirmDeleteEl().hidden = true;
     openModal();
     form.elements.name.focus();
   }
@@ -358,12 +376,13 @@
     const form = formEl();
     const errEl = document.getElementById('form-error');
     const submitBtn = document.getElementById('form-submit-btn');
+    const submitLabel = document.getElementById('form-submit-label');
 
     if (!form.reportValidity()) return;
 
     const data = readFormData();
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Saving…';
+    submitLabel.textContent = 'Saving…';
     errEl.hidden = true;
 
     try {
@@ -384,18 +403,43 @@
       errEl.hidden = false;
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Save';
+      submitLabel.textContent = 'Save';
     }
   }
 
-  async function handleDelete() {
+  // --- Delete confirmation panel -------------------------------
+  function openConfirmDeleteModal(slug) {
+    const emp = findEmployee(slug);
+    if (!emp) return;
+    activeSlug = slug;
+    formMode = null;
+
+    document.getElementById('confirm-delete-name-inline').textContent = emp.name;
+    document.getElementById('confirm-delete-name').textContent = emp.name;
+    document.getElementById('confirm-delete-role').textContent = emp.role || emp.department;
+    document.getElementById('confirm-delete-dept').textContent = emp.department;
+
+    const gradient = getGradientForSlug(emp.slug);
+    document.getElementById('confirm-delete-avatar').innerHTML = `
+      <img src="${escapeHtml(emp.photo)}" alt="${escapeHtml(emp.name)}"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="employee-avatar" style="display:none;background:${gradient};font-size:16px;">${escapeHtml(emp.initials)}</div>
+    `;
+
+    viewEl().hidden = true;
+    formEl().hidden = true;
+    confirmDeleteEl().hidden = false;
+    openModal();
+  }
+
+  async function handleConfirmedDelete() {
     const emp = findEmployee(activeSlug);
     if (!emp) return;
-    if (!window.confirm(`Delete ${emp.name}? This can't be undone.`)) return;
 
-    const deleteBtn = document.getElementById('modal-delete-btn');
+    const deleteBtn = document.getElementById('confirm-delete-confirm-btn');
+    const deleteLabel = document.getElementById('confirm-delete-label');
     deleteBtn.disabled = true;
-    deleteBtn.textContent = 'Deleting…';
+    deleteLabel.textContent = 'Deleting…';
 
     try {
       await apiRequest('DELETE', { slug: emp.slug });
@@ -407,7 +451,7 @@
       showToast(`Could not delete: ${err.message}`, 'error');
     } finally {
       deleteBtn.disabled = false;
-      deleteBtn.textContent = 'Delete';
+      deleteLabel.textContent = 'Delete';
     }
   }
 
@@ -416,7 +460,9 @@
     document.getElementById('modal-close').addEventListener('click', closeModal);
     document.getElementById('form-cancel-btn').addEventListener('click', closeModal);
     document.getElementById('modal-edit-btn').addEventListener('click', () => openFormModal(activeSlug));
-    document.getElementById('modal-delete-btn').addEventListener('click', handleDelete);
+    document.getElementById('modal-delete-btn').addEventListener('click', () => openConfirmDeleteModal(activeSlug));
+    document.getElementById('confirm-delete-cancel-btn').addEventListener('click', () => openViewModal(activeSlug));
+    document.getElementById('confirm-delete-confirm-btn').addEventListener('click', handleConfirmedDelete);
     document.getElementById('modal-form').addEventListener('submit', handleFormSubmit);
     document.getElementById('add-employee-btn').addEventListener('click', () => openFormModal(null));
 
