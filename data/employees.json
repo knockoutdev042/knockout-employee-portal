@@ -107,7 +107,6 @@
     "photo": "images/team/Saif.png",
     "initials": "SS"
   },
- 
   {
     "name": "Namrata Pandurang",
     "role": "UI/UX Designer",
@@ -133,7 +132,13 @@
     "shift": "Day",
     "slug": "deepa-yadav",
     "photo": "images/team/deepa-yadav.png",
-    "initials": "DY"
+    "initials": "DY",
+    "email": "",
+    "phone": "",
+    "location": "",
+    "joinDate": "",
+    "reportsTo": "",
+    "bio": ""
   },
   {
     "name": "Parmeshwar Sherve",
@@ -153,7 +158,6 @@
     "photo": "images/team/Shreyash.png",
     "initials": "SS"
   },
-
   {
     "name": "Shubham Vilas Girkar",
     "role": "Web Developer",
@@ -235,7 +239,6 @@
     "photo": "images/team/wilson-fernandes.png",
     "initials": "WF"
   },
-  
   {
     "name": "Darshan Sawant",
     "role": "Customer Service Representative",
@@ -263,7 +266,6 @@
     "photo": "images/team/rina-nadar.png",
     "initials": "RN"
   },
-
   {
     "name": "Omkar Kailash Garge",
     "role": "Salesforce Administrator",
