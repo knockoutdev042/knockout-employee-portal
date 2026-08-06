@@ -729,6 +729,27 @@ nav a:hover { background: var(--accent-light); color: var(--accent); }
 }
 .form-error[hidden] { display: none; }
 
+.photo-field { display: flex; gap: 16px; align-items: flex-start; }
+.photo-field-preview {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-alt);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-field-preview img { width: 100%; height: 100%; object-fit: cover; }
+.photo-preview-empty { font-size: 10px; font-weight: 600; color: var(--text-muted); text-align: center; padding: 4px; }
+.photo-field-controls { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.photo-upload-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.photo-upload-btn { padding: 9px 16px; font-size: 13px; }
+.form-field input:disabled { opacity: 0.6; cursor: not-allowed; }
+.photo-file-hint { font-size: 11px; font-weight: 400; color: var(--text-muted); }
+
 /* --- Delete confirmation modal --------------------------------- */
 .confirm-icon {
   width: 56px;
