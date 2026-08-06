@@ -320,6 +320,7 @@
       form.elements.name.value = emp.name || '';
       form.elements.role.value = emp.role || '';
       form.elements.department.value = emp.department || '';
+      form.elements.photo.value = emp.photo || '';
       form.elements.shift.value = emp.shift === 'Night' ? 'Night' : 'Day';
       form.elements.email.value = emp.email || '';
       form.elements.phone.value = emp.phone || '';
