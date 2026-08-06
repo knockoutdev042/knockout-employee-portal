@@ -47,6 +47,28 @@ function initialsOf(name) {
   return String(name).trim().split(/\s+/).slice(0, 2).map(p => p[0].toUpperCase()).join('');
 }
 
+class ValidationError extends Error {}
+
+const MAX_IMAGE_BYTES = 3 * 1024 * 1024; // stay well under the function's request payload limit
+const MIME_EXTENSIONS = {
+  'image/jpeg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif',
+  'image/svg+xml': 'svg',
+};
+
+function parsePhotoUpload(dataUrl) {
+  const match = /^data:(image\/[a-zA-Z0-9.+-]+);base64,([A-Za-z0-9+/=]+)$/.exec(dataUrl || '');
+  if (!match) throw new ValidationError('Invalid image upload data');
+  const [, mime, base64] = match;
+  const ext = MIME_EXTENSIONS[mime];
+  if (!ext) throw new ValidationError(`Unsupported image type: ${mime}`);
+  const approxBytes = (base64.length * 3) / 4;
+  if (approxBytes > MAX_IMAGE_BYTES) throw new ValidationError('Image is too large (max 3MB)');
+  return { base64, ext };
+}
+
 async function githubRequest(path, options = {}) {
   const res = await fetch(`${GITHUB_API}${path}`, {
     ...options,
@@ -82,6 +104,28 @@ async function putEmployeesFile(employees, sha, message) {
   });
 }
 
+async function getFileSha(path) {
+  try {
+    const data = await githubRequest(`/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`);
+    return data.sha;
+  } catch (err) {
+    if (/GitHub API 404/.test(err.message)) return null;
+    throw err;
+  }
+}
+
+// Commits an uploaded image to images/team/<slug>.<ext> and returns its repo-relative path.
+async function saveUploadedPhoto(slug, dataUrl, message) {
+  const { base64, ext } = parsePhotoUpload(dataUrl);
+  const path = `images/team/${slug}.${ext}`;
+  const sha = await getFileSha(path);
+  await githubRequest(`/repos/${OWNER}/${REPO}/contents/${path}`, {
+    method: 'PUT',
+    body: JSON.stringify({ message, content: base64, sha: sha || undefined, branch: BRANCH }),
+  });
+  return path;
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: CORS_HEADERS, body: '' };
@@ -113,13 +157,17 @@ exports.handler = async (event) => {
         if (employees.some((e) => e.slug === slug)) {
           return json(409, { error: `An employee with slug "${slug}" already exists` });
         }
+        let photo = body.photo || `images/team/${slug}.jpg`;
+        if (body.photoUpload) {
+          photo = await saveUploadedPhoto(slug, body.photoUpload, `Add employee photo: ${body.name}`);
+        }
         const newEmployee = {
           name: body.name,
           role: body.role || '',
           department: body.department,
           shift: body.shift === 'Night' ? 'Night' : 'Day',
           slug,
-          photo: body.photo || `images/team/${slug}.jpg`,
+          photo,
           initials: body.initials || initialsOf(body.name),
           email: body.email || '',
           phone: body.phone || '',
@@ -138,6 +186,14 @@ exports.handler = async (event) => {
         const idx = employees.findIndex((e) => e.slug === slugParam);
         if (idx === -1) return json(404, { error: `Employee "${slugParam}" not found` });
         const body = JSON.parse(event.body || '{}');
+        if (body.photoUpload) {
+          body.photo = await saveUploadedPhoto(
+            slugParam,
+            body.photoUpload,
+            `Update employee photo: ${employees[idx].name}`
+          );
+        }
+        delete body.photoUpload;
         const updated = {
           ...employees[idx],
           ...body,
@@ -161,6 +217,7 @@ exports.handler = async (event) => {
         return json(405, { error: 'Method not allowed' });
     }
   } catch (err) {
+    if (err instanceof ValidationError) return json(400, { error: err.message });
     return json(500, { error: err.message });
   }
 };

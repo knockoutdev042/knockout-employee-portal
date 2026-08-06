@@ -56,6 +56,9 @@
   let employees = [];   // in-memory source of truth, re-rendered on change
   let formMode = null;  // 'create' | 'edit' | null
   let activeSlug = null; // slug currently shown/edited in the modal
+  let pendingPhotoUpload = null; // data URL of a file picked in the form, or null
+
+  const MAX_PHOTO_BYTES = 3 * 1024 * 1024; // keep uploads well under the function's payload limit
 
   // --- Utilities --------------------------------------------
 
@@ -304,6 +307,62 @@
     openModal();
   }
 
+  // --- Profile picture field (URL input + device upload) ------
+
+  function updatePhotoPreview(src) {
+    const img = document.getElementById('photo-preview-img');
+    const empty = document.getElementById('photo-preview-empty');
+    if (src) {
+      img.onerror = () => { img.style.display = 'none'; empty.style.display = 'block'; };
+      img.src = src;
+      img.style.display = 'block';
+      empty.style.display = 'none';
+    } else {
+      img.style.display = 'none';
+      img.removeAttribute('src');
+      empty.style.display = 'block';
+    }
+  }
+
+  function clearPendingPhotoUpload() {
+    pendingPhotoUpload = null;
+    document.getElementById('photo-file-input').value = '';
+    document.getElementById('photo-clear-btn').hidden = true;
+    const urlInput = document.getElementById('photo-url-input');
+    urlInput.disabled = false;
+    updatePhotoPreview(urlInput.value.trim());
+  }
+
+  function handlePhotoFileChange(evt) {
+    const file = evt.target.files && evt.target.files[0];
+    if (!file) return;
+    const err = document.getElementById('form-error');
+
+    if (!file.type.startsWith('image/')) {
+      err.textContent = 'Please choose an image file.';
+      err.hidden = false;
+      evt.target.value = '';
+      return;
+    }
+    if (file.size > MAX_PHOTO_BYTES) {
+      err.textContent = 'Image is too large — please choose a file under 3MB.';
+      err.hidden = false;
+      evt.target.value = '';
+      return;
+    }
+    err.hidden = true;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      pendingPhotoUpload = reader.result;
+      const urlInput = document.getElementById('photo-url-input');
+      urlInput.disabled = true;
+      document.getElementById('photo-clear-btn').hidden = false;
+      updatePhotoPreview(pendingPhotoUpload);
+    };
+    reader.readAsDataURL(file);
+  }
+
   function openFormModal(slug) {
     formMode = slug ? 'edit' : 'create';
     activeSlug = slug || null;
@@ -316,10 +375,16 @@
     err.hidden = true;
     err.textContent = '';
 
+    pendingPhotoUpload = null;
+    document.getElementById('photo-file-input').value = '';
+    document.getElementById('photo-clear-btn').hidden = true;
+    document.getElementById('photo-url-input').disabled = false;
+
     if (emp) {
       form.elements.name.value = emp.name || '';
       form.elements.role.value = emp.role || '';
       form.elements.department.value = emp.department || '';
+      form.elements.photo.value = emp.photo || '';
       form.elements.shift.value = emp.shift === 'Night' ? 'Night' : 'Day';
       form.elements.email.value = emp.email || '';
       form.elements.phone.value = emp.phone || '';
@@ -328,6 +393,7 @@
       form.elements.reportsTo.value = emp.reportsTo || '';
       form.elements.bio.value = emp.bio || '';
     }
+    updatePhotoPreview(form.elements.photo.value.trim());
 
     viewEl().hidden = true;
     form.hidden = false;
@@ -341,6 +407,7 @@
     const fd = new FormData(form);
     const data = {};
     fd.forEach((value, key) => { data[key] = String(value).trim(); });
+    if (pendingPhotoUpload) data.photoUpload = pendingPhotoUpload;
     return data;
   }
 
@@ -454,6 +521,11 @@
     document.getElementById('confirm-delete-confirm-btn').addEventListener('click', handleConfirmedDelete);
     document.getElementById('modal-form').addEventListener('submit', handleFormSubmit);
     document.getElementById('add-employee-btn').addEventListener('click', () => openFormModal(null));
+    document.getElementById('photo-file-input').addEventListener('change', handlePhotoFileChange);
+    document.getElementById('photo-clear-btn').addEventListener('click', clearPendingPhotoUpload);
+    document.getElementById('photo-url-input').addEventListener('input', (e) => {
+      if (!pendingPhotoUpload) updatePhotoPreview(e.target.value.trim());
+    });
 
     overlay().addEventListener('click', (e) => {
       if (e.target === overlay()) closeModal();
