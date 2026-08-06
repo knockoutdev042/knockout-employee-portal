@@ -141,8 +141,8 @@
               <datalist id="dept-list"></datalist>
             </div>
           </label>
-          <label class="form-field form-field--full">
-            Profile Picture
+          <div class="form-field form-field--full">
+            <span class="field-label">Profile Picture</span>
             <div class="photo-field">
               <div class="photo-field-preview" id="photo-preview-wrap">
                 <img id="photo-preview-img" alt="" style="display:none;" />
@@ -151,7 +151,7 @@
               <div class="photo-field-controls">
                 <div class="field-input-wrap">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg>
-                  <input type="text" name="photo" id="photo-url-input" placeholder="images/team/jane-doe.jpg or https://..." />
+                  <input type="text" name="photo" id="photo-url-input" aria-label="Profile picture URL or path" placeholder="images/team/jane-doe.jpg or https://..." />
                 </div>
                 <div class="photo-upload-row">
                   <label class="btn btn--secondary photo-upload-btn" for="photo-file-input">
@@ -164,7 +164,7 @@
                 <span class="photo-file-hint">JPG, PNG, WEBP, GIF or SVG · max 3MB. Or paste an image URL/path above.</span>
               </div>
             </div>
-          </label>
+          </div>
           <label class="form-field">
             Shift
             <div class="field-input-wrap">
