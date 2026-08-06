@@ -5,7 +5,7 @@
     "department": "Manager",
     "shift": "Day",
     "slug": "roshani-shinde",
-    "photo": "images/team/roshani-shinde.jpg",
+    "photo": "images/team/roshani-shinde.png",
     "initials": "RS"
   },
   {
@@ -14,7 +14,7 @@
     "department": "SEO",
     "shift": "Day",
     "slug": "mayuresh-sorap",
-    "photo": "images/team/mayuresh-sorap.jpg",
+    "photo": "images/team/mayuresh-sorap.png",
     "initials": "MS"
   },
   {
@@ -23,7 +23,7 @@
     "department": "Admin & Operations",
     "shift": "Night",
     "slug": "aakash-pandit",
-    "photo": "images/team/aakash-pandit.jpg",
+    "photo": "images/team/aakash-pandit.png",
     "initials": "AP"
   },
   {
@@ -32,7 +32,7 @@
     "department": "Admin & Operations",
     "shift": "Day",
     "slug": "manish-mestry",
-    "photo": "images/team/manish-mestry.jpg",
+    "photo": "images/team/Manish.png",
     "initials": "MM"
   },
   {
@@ -41,7 +41,7 @@
     "department": "Admin & Operations",
     "shift": "Day",
     "slug": "mohammad-atique-khan",
-    "photo": "images/team/mohammad-atique-khan.jpg",
+    "photo": "images/team/Atik.png",
     "initials": "MA"
   },
   {
@@ -50,7 +50,7 @@
     "department": "Admin & Operations",
     "shift": "Night",
     "slug": "aman-patil",
-    "photo": "images/team/aman-patil.jpg",
+    "photo": "images/team/aman-patil.png",
     "initials": "AP"
   },
   {
@@ -59,7 +59,7 @@
     "department": "Admin & Operations",
     "shift": "Day",
     "slug": "tajinderpal-singh",
-    "photo": "images/team/tajinderpal-singh.jpg",
+    "photo": "images/team/tajinderpal-singh.png",
     "initials": "TS"
   },
   {
@@ -77,7 +77,7 @@
     "department": "Web Development",
     "shift": "Day",
     "slug": "nishant-bharmal",
-    "photo": "images/team/nishant-bharmal.jpg",
+    "photo": "images/team/nishant-bharmal.png",
     "initials": "NB"
   },
   {
@@ -86,7 +86,7 @@
     "department": "Office Help",
     "shift": "Day",
     "slug": "jyoti-more",
-    "photo": "images/team/jyoti-more.jpg",
+    "photo": "images/team/jyoti-more.png",
     "initials": "JM"
   },
   {
@@ -95,7 +95,7 @@
     "department": "Admin & Operations",
     "shift": "Night",
     "slug": "taufiquddin-shaikh",
-    "photo": "images/team/taufiquddin-shaikh.jpg",
+    "photo": "images/team/taufiquddin-shaikh.png",
     "initials": "TS"
   },
   {
@@ -104,25 +104,17 @@
     "department": "Clerical Admin",
     "shift": "Day",
     "slug": "saif-shaikh",
-    "photo": "images/team/saif-shaikh.jpg",
+    "photo": "images/team/Saif.png",
     "initials": "SS"
   },
-  {
-    "name": "Akshita Thappa",
-    "role": "Senior HR cum Admin Executive",
-    "department": "HR",
-    "shift": "Day",
-    "slug": "akshita-thappa",
-    "photo": "images/team/akshita-thappa.jpg",
-    "initials": "AT"
-  },
+ 
   {
     "name": "Namrata Pandurang",
     "role": "UI/UX Designer",
     "department": "UI/UX Design",
     "shift": "Day",
     "slug": "namrata-pandurang",
-    "photo": "images/team/namrata-pandurang.jpg",
+    "photo": "images/team/Namrta.png",
     "initials": "NP"
   },
   {
@@ -131,7 +123,7 @@
     "department": "UI/UX Design",
     "shift": "Day",
     "slug": "priyanka-kochrekar",
-    "photo": "images/team/priyanka-kochrekar.jpg",
+    "photo": "images/team/priyanka-kochrekar.png",
     "initials": "PK"
   },
   {
@@ -140,7 +132,7 @@
     "department": "Web Development",
     "shift": "Day",
     "slug": "deepa-yadav",
-    "photo": "images/team/deepa-yadav.jpg",
+    "photo": "images/team/deepa-yadav.png",
     "initials": "DY"
   },
   {
@@ -149,7 +141,7 @@
     "department": "Email Marketing & SFMC",
     "shift": "Day",
     "slug": "parmeshwar-sherve",
-    "photo": "images/team/parmeshwar-sherve.jpg",
+    "photo": "images/team/parmeshwar-sherve.png",
     "initials": "PS"
   },
   {
@@ -158,25 +150,17 @@
     "department": "Graphic Design",
     "shift": "Day",
     "slug": "shreyash-sanjay-patil",
-    "photo": "images/team/shreyash-sanjay-patil.jpg",
+    "photo": "images/team/Shreyash.png",
     "initials": "SS"
   },
-  {
-    "name": "Satyavijay Sapkal",
-    "role": "Senior Graphic Designer",
-    "department": "Graphic Design",
-    "shift": "Day",
-    "slug": "satyavijay-sapkal",
-    "photo": "images/team/satyavijay-sapkal.jpg",
-    "initials": "SS"
-  },
+
   {
     "name": "Shubham Vilas Girkar",
     "role": "Web Developer",
     "department": "Web Development",
     "shift": "Day",
     "slug": "shubham-vilas-girkar",
-    "photo": "images/team/shubham-vilas-girkar.jpg",
+    "photo": "images/team/shubham-vilas-girkar.png",
     "initials": "SV"
   },
   {
@@ -185,7 +169,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "abdul-shaikh",
-    "photo": "images/team/abdul-shaikh.jpg",
+    "photo": "images/team/Abdul.png",
     "initials": "AS"
   },
   {
@@ -194,7 +178,7 @@
     "department": "SEO",
     "shift": "Day",
     "slug": "moinul-khan",
-    "photo": "images/team/moinul-khan.jpg",
+    "photo": "images/team/moinul-khan.png",
     "initials": "MK"
   },
   {
@@ -203,7 +187,7 @@
     "department": "Web Development",
     "shift": "Night",
     "slug": "devendra-rajendra-patil",
-    "photo": "images/team/devendra-rajendra-patil.jpg",
+    "photo": "images/team/devendra-rajendra-patil.png",
     "initials": "DR"
   },
   {
@@ -212,7 +196,7 @@
     "department": "Customer Service",
     "shift": "Day",
     "slug": "suraj-kadam",
-    "photo": "images/team/suraj-kadam.jpg",
+    "photo": "images/team/suraj-kadam.png",
     "initials": "SK"
   },
   {
@@ -221,7 +205,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "prashant-muni",
-    "photo": "images/team/prashant-muni.jpg",
+    "photo": "images/team/prashant-muni.png",
     "initials": "PM"
   },
   {
@@ -230,7 +214,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "royce-d-souza",
-    "photo": "images/team/royce-d-souza.jpg",
+    "photo": "images/team/royce-d-souza.png",
     "initials": "RD"
   },
   {
@@ -239,7 +223,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "shamam-rizvi",
-    "photo": "images/team/shamam-rizvi.jpg",
+    "photo": "images/team/shamam-rizvi.png",
     "initials": "SR"
   },
   {
@@ -248,25 +232,17 @@
     "department": "SEO",
     "shift": "Day",
     "slug": "wilson-fernandes",
-    "photo": "images/team/wilson-fernandes.jpg",
+    "photo": "images/team/wilson-fernandes.png",
     "initials": "WF"
   },
-  {
-    "name": "Shiv Pandey",
-    "role": "Customer Service Representative",
-    "department": "Customer Service",
-    "shift": "Night",
-    "slug": "shiv-pandey",
-    "photo": "images/team/shiv-pandey.jpg",
-    "initials": "SP"
-  },
+  
   {
     "name": "Darshan Sawant",
     "role": "Customer Service Representative",
     "department": "Customer Service",
     "shift": "Night",
     "slug": "darshan-sawant",
-    "photo": "images/team/darshan-sawant.jpg",
+    "photo": "images/team/darshan-sawant.png",
     "initials": "DS"
   },
   {
@@ -275,7 +251,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "karan-singh",
-    "photo": "images/team/karan-singh.jpg",
+    "photo": "images/team/karan-singh.png",
     "initials": "KS"
   },
   {
@@ -284,43 +260,17 @@
     "department": "Email Marketing & SFMC",
     "shift": "Day",
     "slug": "rina-nadar",
-    "photo": "images/team/rina-nadar.jpg",
+    "photo": "images/team/rina-nadar.png",
     "initials": "RN"
   },
-  {
-    "name": "Nikita More",
-    "role": "Admin Assistant",
-    "department": "Clerical Admin",
-    "shift": "Day",
-    "slug": "nikita-more",
-    "photo": "images/team/nikita-more.jpg",
-    "initials": "NM"
-  },
-  {
-    "name": "Sayed Junaid Ahmed",
-    "role": "HR Executive",
-    "department": "HR",
-    "shift": "Day",
-    "slug": "sayed-junaid-ahmed",
-    "photo": "images/team/sayed-junaid-ahmed.jpg",
-    "initials": "SJ"
-  },
-  {
-    "name": "Najeeb Mankar",
-    "role": "SEO Manager",
-    "department": "SEO",
-    "shift": "Day",
-    "slug": "najeeb-mankar",
-    "photo": "images/team/najeeb-mankar.jpg",
-    "initials": "NM"
-  },
+
   {
     "name": "Omkar Kailash Garge",
     "role": "Salesforce Administrator",
     "department": "Salesforce",
     "shift": "Night",
     "slug": "omkar-kailash-garge",
-    "photo": "images/team/omkar-kailash-garge.jpg",
+    "photo": "images/team/omkar-kailash-garge.png",
     "initials": "OK"
   },
   {
@@ -329,7 +279,7 @@
     "department": "Web Development",
     "shift": "Day",
     "slug": "anup-santosh-kankale",
-    "photo": "images/team/anup-santosh-kankale.jpg",
+    "photo": "images/team/anup-santosh-kankale.png",
     "initials": "AS"
   },
   {
@@ -338,7 +288,7 @@
     "department": "Customer Service",
     "shift": "Day",
     "slug": "keith-buthello",
-    "photo": "images/team/keith-buthello.jpg",
+    "photo": "images/team/keith-buthello.png",
     "initials": "KB"
   },
   {
@@ -347,7 +297,7 @@
     "department": "Customer Service",
     "shift": "Night",
     "slug": "arbaaz-shaikh",
-    "photo": "images/team/arbaaz-shaikh.jpg",
+    "photo": "images/team/arbaaz-shaikh.png",
     "initials": "AS"
   },
   {
@@ -356,7 +306,7 @@
     "department": "Customer Service",
     "shift": "Day",
     "slug": "sanju-thappa",
-    "photo": "images/team/sanju-thappa.jpg",
+    "photo": "images/team/sanju-thappa.png",
     "initials": "ST"
   }
 ]
