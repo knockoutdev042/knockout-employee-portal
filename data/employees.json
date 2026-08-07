@@ -283,5 +283,20 @@
     "slug": "arbaaz-shaikh",
     "photo": "images/team/arbaaz-shaikh.png",
     "initials": "AS"
+  },
+  {
+    "name": "Sanchit Sarvankar",
+    "role": "HR Executive",
+    "department": "HR",
+    "shift": "Day",
+    "slug": "sanchit-sarvankar",
+    "photo": "images/team/sanchit-sarvankar.jpg",
+    "initials": "SS",
+    "email": "",
+    "phone": "",
+    "location": "",
+    "joinDate": "",
+    "bio": "",
+    "reportsTo": ""
   }
 ]
