@@ -249,15 +249,6 @@
     "initials": "DS"
   },
   {
-    "name": "Karan Singh",
-    "role": "Customer Service Representative",
-    "department": "Customer Service",
-    "shift": "Night",
-    "slug": "karan-singh",
-    "photo": "images/team/karan-singh.png",
-    "initials": "KS"
-  },
-  {
     "name": "Rina Nadar",
     "role": "Salesforce Marketing Cloud Executive",
     "department": "Email Marketing & SFMC",
