@@ -313,5 +313,20 @@
     "joinDate": "",
     "bio": "",
     "reportsTo": ""
+  },
+  {
+    "name": "Samruddhi Machivale",
+    "role": "SEO Executive",
+    "department": "SEO",
+    "shift": "Day",
+    "slug": "samruddhi-machivale",
+    "photo": "images/team/samruddhi-machivale.jpg",
+    "initials": "SM",
+    "email": "",
+    "phone": "",
+    "location": "",
+    "joinDate": "",
+    "bio": "",
+    "reportsTo": ""
   }
 ]
