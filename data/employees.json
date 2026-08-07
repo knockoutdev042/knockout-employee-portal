@@ -298,5 +298,20 @@
     "joinDate": "",
     "bio": "",
     "reportsTo": ""
+  },
+  {
+    "name": "Avinash Padsalgi",
+    "role": "Graphic Designer",
+    "department": "Graphic Design",
+    "shift": "Day",
+    "slug": "avinash-padsalgi",
+    "photo": "images/team/avinash-padsalgi.jpg",
+    "initials": "AP",
+    "email": "",
+    "phone": "",
+    "location": "",
+    "joinDate": "",
+    "bio": "",
+    "reportsTo": ""
   }
 ]
