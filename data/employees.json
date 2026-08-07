@@ -292,14 +292,5 @@
     "slug": "arbaaz-shaikh",
     "photo": "images/team/arbaaz-shaikh.png",
     "initials": "AS"
-  },
-  {
-    "name": "Sanju Thappa",
-    "role": "Customer Service Representative",
-    "department": "Customer Service",
-    "shift": "Day",
-    "slug": "sanju-thappa",
-    "photo": "images/team/sanju-thappa.png",
-    "initials": "ST"
   }
 ]
